@@ -1,28 +1,26 @@
-Summary: A menu-driven file backup system.
-Name: taper
-Version: 6.9
-Release: 6
-Copyright: GPL
-Group: Applications/Archiving
-Source: http://www.omen.com.au/~yusuf/taper-%{version}.tar.gz
-URL: http://www.omen.com.au/~yusuf
-Patch0: taper-%{version}-rh.patch
-Patch1: taper-%{version}-sparc.patch
-Patch2: taper-%{version}-fix.patch
+Summary:	A menu-driven file backup system
+Name:		taper
+Version:	6.9
+Release:	6
+License:	GPL
+Group:		Utilities/Archiving
+Group(pl):	Narzêdzia/Archiwizacja
+Source0:	http://www.omen.com.au/~yusuf/%{name}-%{version}.tar.gz
+URL:		http://www.omen.com.au/~yusuf
+Patch0:		taper-%{version}-rh.patch
+Patch1:		taper-%{version}-sparc.patch
+Patch2:		taper-%{version}-fix.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Taper is a backup and restoration program with a friendly user
-interface.  Files may be backed up to a tape drive or to a hard disk.
+interface. Files may be backed up to a tape drive or to a hard disk.
 The interface for selecting files to be backed up/restored is very
 similar to the Midnight Commander interface, and allows easy traversal
-of directories.  Taper supports recursive selection of directories.
-Taper also supports backing up SCSI, ftape, zftape and removable drives.
-By default, taper is set for incremental backups and automatic most
-recent restore.
-
-Install the taper package if you need a user friendly file backup and
-restoration program.
+of directories. Taper supports recursive selection of directories.
+Taper also supports backing up SCSI, ftape, zftape and removable
+drives. By default, taper is set for incremental backups and automatic
+most recent restore.
 
 %prep
 %setup -q
@@ -47,7 +45,7 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
-/usr/sbin/*
-#/usr/bin/*
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_sbindir}/*
+#%{_bindir}/*
 %doc docs/*
