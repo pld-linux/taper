@@ -7,8 +7,8 @@ License:	GPL
 Group:		Applications/Archiving
 Group(de):	Applikationen/Archivierung
 Group(pl):	Aplikacje/Archiwizacja
-Source0:	http://www.omen.com.au/~yusuf/%{name}-%{version}.tar.gz
-URL:		http://www.omen.com.au/~yusuf
+Source0:	http://www.e-survey,net.au/%{name}-%{version}.tar.gz
+URL:		http://www.e-survey,net.au/taper/
 Patch0:		%{name}-%{version}-rh.patch
 Patch1:		%{name}-%{version}-sparc.patch
 Patch2:		%{name}-%{version}-fix.patch
@@ -23,6 +23,14 @@ of directories. Taper supports recursive selection of directories.
 Taper also supports backing up SCSI, ftape, zftape and removable
 drives. By default, taper is set for incremental backups and automatic
 most recent restore.
+
+%description -l pl
+Taper jest programem do obs³ugi backup'u z przyjaznym interfejsem
+u¿ytkownika. Pliki mog± byæ sk³adowane na napêdzie ta¶mowym lub na dysku
+twardym. Interfejs do wyboru plików jest bardzo podobny do Midnight 
+Commander'a i pozwala na ³atwe poruszanie siê po katalogach. Taper
+daje mo¿liwo¶æ rekursywnego wyboru katalogów, sk³adowanie na SCSI, ftape,
+zftape oraz dyskach przeno¶nych.
 
 %prep
 %setup -q
