@@ -9,7 +9,7 @@ URL: http://www.omen.com.au/~yusuf
 Patch0: taper-%{version}-rh.patch
 Patch1: taper-%{version}-sparc.patch
 Patch2: taper-%{version}-fix.patch
-Buildroot: /var/tmp/taper-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Taper is a backup and restoration program with a friendly user
