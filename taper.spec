@@ -5,8 +5,6 @@ Version:	6.9
 Release:	6
 License:	GPL
 Group:		Applications/Archiving
-Group(de):	Applikationen/Archivierung
-Group(pl):	Aplikacje/Archiwizacja
 Source0:	http://www.e-survey,net.au/%{name}-%{version}.tar.gz
 URL:		http://www.e-survey,net.au/taper/
 Patch0:		%{name}-%{version}-rh.patch
