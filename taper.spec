@@ -47,7 +47,9 @@ find . -name CVS -type d | xargs rm -rf
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	MANDIR=%{_mandir}/man8
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -56,4 +58,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_sbindir}/*
 #%{_bindir}/*
+%{_mandir}/man8/*
 %doc docs/*
