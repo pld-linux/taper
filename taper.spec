@@ -24,11 +24,11 @@ most recent restore.
 
 %description -l pl
 Taper jest programem do obs³ugi backup'u z przyjaznym interfejsem
-u¿ytkownika. Pliki mog± byæ sk³adowane na napêdzie ta¶mowym lub na dysku
-twardym. Interfejs do wyboru plików jest bardzo podobny do Midnight 
-Commander'a i pozwala na ³atwe poruszanie siê po katalogach. Taper
-daje mo¿liwo¶æ rekursywnego wyboru katalogów, sk³adowanie na SCSI, ftape,
-zftape oraz dyskach przeno¶nych.
+u¿ytkownika. Pliki mog± byæ sk³adowane na napêdzie ta¶mowym lub na
+dysku twardym. Interfejs do wyboru plików jest bardzo podobny do
+Midnight Commander'a i pozwala na ³atwe poruszanie siê po katalogach.
+Taper daje mo¿liwo¶æ rekursywnego wyboru katalogów, sk³adowanie na
+SCSI, ftape, zftape oraz dyskach przeno¶nych.
 
 %prep
 %setup -q
