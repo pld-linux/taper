@@ -1,0 +1,48 @@
+--- taper-6.9/Makefile.common.rh	Fri Aug 28 07:01:09 1998
++++ taper-6.9/Makefile.common	Thu Sep 24 11:40:58 1998
+@@ -18,7 +18,7 @@
+ #
+ 
+ DEVELOPMENT = FALSE
+-GLIBC=FALSE
++GLIBC=TRUE
+ 
+ DEFINES0 = -DLINUX -D_GNU_SOURCE -Dlint	# gcc acts like a lint with -Wall
+ DEFINES1 = -DTRIPLE_BUFFER              # see above 
+@@ -44,9 +44,9 @@
+ #a -l or -L (eg. -lspecial -Llibnothing)
+ LIBPATH = 
+ 
+-BINDIR=/sbin
+-ALTBIN=/bin
+-MANDIR=/usr/man/cat8
++BINDIR=/usr/sbin
++ALTBIN=/usr/bin
++MANDIR=/usr/man/man8
+ COMPRESS_DIR=compress
+ COMPRESS_LIB=comp_lib
+ DOCS_DIR=docs
+--- taper-6.9/Makefile.rh	Fri Aug 28 06:59:01 1998
++++ taper-6.9/Makefile	Thu Sep 24 11:40:40 1998
+@@ -80,13 +80,14 @@
+ 	$(CC) $(CFLAGS) $(DEFINES) $(INCLUDE) -o $@ -c $<
+ 
+ install:
+-	install --mode 755 --strip taper $(BINDIR) 
+-	install --mode 755 --strip bg_backup $(BINDIR)
+-	install --mode 755 --strip bg_restore $(BINDIR)
+-	install --mode 644 docs/taper.8 $(MANDIR)
+-	ln -sf $(BINDIR)/taper $(ALTBIN)/taper
+-	ln -sf $(BINDIR)/bg_backup $(ALTBIN)/bg_backup
+-	ln -sf $(BINDIR)/bg_restore $(ALTBIN)/bg_restore
++	mkdir -p $(DESTDIR)/$(BINDIR) $(DESTDIR)/$(ALTBIN) $(DESTDIR)/$(MANDIR)
++	install --mode 755 --strip taper $(DESTDIR)/$(BINDIR) 
++	install --mode 755 --strip bg_backup $(DESTDIR)/$(BINDIR)
++	install --mode 755 --strip bg_restore $(DESTDIR)/$(BINDIR)
++	install --mode 644 docs/taper.8 $(DESTDIR)/$(MANDIR)
++	ln -sf $(BINDIR)/taper $(DESTDIR)/$(ALTBIN)/taper
++	ln -sf $(BINDIR)/bg_backup $(DESTDIR)/$(ALTBIN)/bg_backup
++	ln -sf $(BINDIR)/bg_restore $(DESTDIR)/$(ALTBIN)/bg_restore
+ 
+ uninstall:
+ 	rm -rf	$(BINDIR)/taper \

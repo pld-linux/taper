@@ -1,0 +1,27 @@
+--- taper-6.9/bg_backup.c.fix	Mon Sep 28 16:23:47 1998
++++ taper-6.9/bg_backup.c	Mon Sep 28 16:32:39 1998
+@@ -176,6 +176,10 @@
+     int shm_id;
+ #endif
+ 
++    if (argc < 9) {
++	fprintf(stderr, "Wrong number of arguments.\n");
++	return -1;
++    }
+     fifo_name = argv[4];
+     fdfifo = fopen(fifo_name, "w");		 /* open FIFO  */
+     init_memory();
+--- taper-6.9/bg_restore.c.fix	Mon Sep 28 16:24:11 1998
++++ taper-6.9/bg_restore.c	Mon Sep 28 16:32:53 1998
+@@ -63,6 +63,11 @@
+ #endif
+     char *tr_buffer1;
+ 
++    if (argc < 7) {
++	fprintf(stderr, "Wrong number of arguments\n");
++	return -1;
++    }
++    
+     fifo_name = argv[3];
+     fdfifo = fopen(fifo_name, "r");		 /* open FIFO  */
+     if (fdfifo == NULL) exit(-1);
