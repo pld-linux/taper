@@ -4,16 +4,16 @@ Summary(fr):	Système de sauvegarde par menus avec gestion de la compression
 Summary(pl):	System do backupów obs³ugiwany z menu
 Summary(tr):	Sýkýþtýrma desteði sunan, menü tabanlý yedekleme sistemi
 Name:		taper
-Version:	6.9
-Release:	6
+Version:	7.0
+Release:	0.pre1.1
 License:	GPL
 Group:		Applications/Archiving
-Source0:	http://www.e-survey.net.au/%{name}-%{version}.tar.gz
-# Source0-md5:	3d80df0a444160a81be0e8bef46d3d7f
-URL:		http://www.e-survey.net.au/taper/
+Source0:	http://dl.sourceforge.net/sourceforge/taper/%{name}-%{version}pre-1.tar.gz
+# Source0-md5:	d8e983c3ba24af2feb03290e66e43a93
+URL:		http://taper.sf.net/
 Patch0:		%{name}-%{version}-rh.patch
 Patch1:		%{name}-%{version}-sparc.patch
-Patch2:		%{name}-%{version}-fix.patch
+BuildRequires:	ncurses-ext-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -64,14 +64,12 @@ yedeklenecek ya da geri yüklenecek dosyalarý seçmek oldukça kolaydýr.
 SCSI, ftape, zftape ve takýlýr/çýkarýlýr sürücüler desteklenmektedir.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}pre-1
 %patch0 -p1
 
 %ifarch sparc
 %patch1 -p1
 %endif
-
-%patch2 -p1
 
 find . -name CVS -type d | xargs rm -rf
 
