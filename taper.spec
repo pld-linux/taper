@@ -1,15 +1,17 @@
 Summary:	A menu-driven file backup system
+Summary(pl):	System do backupów obs³ugiwany z menu
 Name:		taper
 Version:	6.9
 Release:	6
 License:	GPL
-Group:		Utilities/Archiving
-Group(pl):	Narzêdzia/Archiwizacja
+Group:		Applications/Archiving
+Group(de):	Applikationen/Archivierung
+Group(pl):	Aplikacje/Archiwizacja
 Source0:	http://www.omen.com.au/~yusuf/%{name}-%{version}.tar.gz
 URL:		http://www.omen.com.au/~yusuf
-Patch0:		taper-%{version}-rh.patch
-Patch1:		taper-%{version}-sparc.patch
-Patch2:		taper-%{version}-fix.patch
+Patch0:		%{name}-%{version}-rh.patch
+Patch1:		%{name}-%{version}-sparc.patch
+Patch2:		%{name}-%{version}-fix.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,7 +37,7 @@ most recent restore.
 find . -name CVS -type d | xargs rm -rf
 
 %build
-%{__make} CFLAGS="$RPM_OPT_FLAGS"
+%{__make} CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
