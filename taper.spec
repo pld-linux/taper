@@ -8,7 +8,7 @@ Version:	7.0
 Release:	0.pre1.1
 License:	GPL
 Group:		Applications/Archiving
-Source0:	http://dl.sourceforge.net/sourceforge/taper/%{name}-%{version}pre-1.tar.gz
+Source0:	http://dl.sourceforge.net/taper/%{name}-%{version}pre-1.tar.gz
 # Source0-md5:	d8e983c3ba24af2feb03290e66e43a93
 URL:		http://taper.sf.net/
 Patch0:		%{name}-%{version}-rh.patch
@@ -49,12 +49,12 @@ la restauration automatique de la plus récente sont les valeurs par
 défaut. Les lecteurs amovibles, SCSI, ftape, zftape sont reconnus.
 
 %description -l pl
-Taper jest programem do obs³ugi backup'u z przyjaznym interfejsem
-u¿ytkownika. Pliki mog± byæ sk³adowane na napêdzie ta¶mowym lub na
-dysku twardym. Interfejs do wyboru plików jest bardzo podobny do
-Midnight Commander'a i pozwala na ³atwe poruszanie siê po katalogach.
-Taper daje mo¿liwo¶æ rekursywnego wyboru katalogów, sk³adowanie na
-SCSI, ftape, zftape oraz dyskach przeno¶nych.
+Taper jest programem do obs³ugi kopii zapasowych z przyjaznym
+interfejsem u¿ytkownika. Pliki mog± byæ sk³adowane na napêdzie
+ta¶mowym lub na dysku twardym. Interfejs do wyboru plików jest bardzo
+podobny do Midnight Commandera i pozwala na ³atwe poruszanie siê po
+katalogach. Taper daje mo¿liwo¶æ rekursywnego wyboru katalogów,
+sk³adowanie na SCSI, ftape, zftape oraz dyskach przeno¶nych.
 
 %description -l tr
 Bu yazýlým, sevimli bir kullanýcý arayüzüne sahip bir manyetik bant
@@ -66,7 +66,6 @@ SCSI, ftape, zftape ve takýlýr/çýkarýlýr sürücüler desteklenmektedir.
 %prep
 %setup -q -n %{name}-%{version}pre-1
 %patch0 -p1
-
 %ifarch sparc
 %patch1 -p1
 %endif
@@ -74,7 +73,8 @@ SCSI, ftape, zftape ve takýlýr/çýkarýlýr sürücüler desteklenmektedir.
 find . -name CVS -type d | xargs rm -rf
 
 %build
-%{__make} CFLAGS="%{rpmcflags}"
+%{__make} \
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -87,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc docs/*
 %attr(755,root,root) %{_sbindir}/*
 #%%{_bindir}/*
 %{_mandir}/man8/*
-%doc docs/*
