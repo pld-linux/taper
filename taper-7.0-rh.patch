@@ -1,0 +1,39 @@
+--- taper-7.0pre-1/Makefile.common.orig	2005-03-14 13:20:52.648338000 +0100
++++ taper-7.0pre-1/Makefile.common	2005-03-14 13:38:46.583075104 +0100
+@@ -45,9 +45,9 @@
+ #a -l or -L (eg. -lspecial -Llibnothing)
+ LIBPATH = 
+ 
+-BINDIR=/sbin
+-ALTBIN=/bin
+-MANDIR=/usr/man/cat8
++BINDIR=/usr/sbin
++ALTBIN=/usr/bin
++MANDIR=/usr/man/man8
+ COMPRESS_DIR=compress
+ COMPRESS_LIB=comp_lib
+ DOCS_DIR=docs
+--- taper-7.0pre-1/Makefile.orig	2005-03-14 13:40:00.610821176 +0100
++++ taper-7.0pre-1/Makefile	2005-03-14 13:40:35.360538416 +0100
+@@ -82,13 +82,14 @@
+ 	$(CC) $(CFLAGS) $(DEFINES) $(INCLUDE) -o $@ -c $<
+ 
+ install:
+-	install --mode 755 --strip taper $(BINDIR) 
+-	install --mode 755 --strip bg_backup $(BINDIR)
+-	install --mode 755 --strip bg_restore $(BINDIR)
+-	install --mode 644 docs/taper.8 $(MANDIR)
+-	ln -sf $(BINDIR)/taper $(ALTBIN)/taper
+-	ln -sf $(BINDIR)/bg_backup $(ALTBIN)/bg_backup
+-	ln -sf $(BINDIR)/bg_restore $(ALTBIN)/bg_restore
++	mkdir -p $(DESTDIR)/$(BINDIR) $(DESTDIR)/$(ALTBIN) $(DESTDIR)/$(MANDIR)
++	install --mode 755 --strip taper $(DESTDIR)/$(BINDIR) 
++	install --mode 755 --strip bg_backup $(DESTDIR)/$(BINDIR)
++	install --mode 755 --strip bg_restore $(DESTDIR)/$(BINDIR)
++	install --mode 644 docs/taper.8 $(DESTDIR)/$(MANDIR)
++	ln -sf $(BINDIR)/taper $(DESTDIR)/$(ALTBIN)/taper
++	ln -sf $(BINDIR)/bg_backup $(DESTDIR)/$(ALTBIN)/bg_backup
++	ln -sf $(BINDIR)/bg_restore $(DESTDIR)/$(ALTBIN)/bg_restore
+ 
+ uninstall:
+ 	rm -rf	$(BINDIR)/taper \
