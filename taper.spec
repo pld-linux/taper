@@ -5,12 +5,13 @@ Summary(pl):	System do backupów obs³ugiwany z menu
 Summary(tr):	Sýkýþtýrma desteði sunan, menü tabanlý yedekleme sistemi
 Name:		taper
 Version:	7.0
-Release:	0.pre1.1
-License:	GPL
+%define		_pre	pre1
+Release:	0.%{_pre}.1
+License:	GPL v2
 Group:		Applications/Archiving
 Source0:	http://dl.sourceforge.net/taper/%{name}-%{version}pre-1.tar.gz
 # Source0-md5:	d8e983c3ba24af2feb03290e66e43a93
-URL:		http://taper.sf.net/
+URL:		http://taper.sourceforge.net/
 Patch0:		%{name}-%{version}-rh.patch
 Patch1:		%{name}-%{version}-sparc.patch
 BuildRequires:	ncurses-ext-devel
@@ -74,6 +75,7 @@ find . -name CVS -type d | xargs rm -rf
 
 %build
 %{__make} \
+	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags}"
 
 %install
@@ -89,5 +91,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc docs/*
 %attr(755,root,root) %{_sbindir}/*
-#%%{_bindir}/*
 %{_mandir}/man8/*
