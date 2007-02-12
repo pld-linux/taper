@@ -1,8 +1,8 @@
 Summary:	A menu-driven file backup system
-Summary(de):	Menügesteuertes Backupsystem mit Unterstützung für Komprimierung
-Summary(fr):	Système de sauvegarde par menus avec gestion de la compression
-Summary(pl):	System do backupów obs³ugiwany z menu
-Summary(tr):	Sıkıştırma desteği sunan, menü tabanlı yedekleme sistemi
+Summary(de.UTF-8):   MenÃ¼gesteuertes Backupsystem mit UnterstÃ¼tzung fÃ¼r Komprimierung
+Summary(fr.UTF-8):   SystÃ¨me de sauvegarde par menus avec gestion de la compression
+Summary(pl.UTF-8):   System do backupÃ³w obsÅ‚ugiwany z menu
+Summary(tr.UTF-8):   SÄ±kÄ±ÅŸtÄ±rma desteÄŸi sunan, menÃ¼ tabanlÄ± yedekleme sistemi
 Name:		taper
 Version:	7.0
 %define		_pre	pre1
@@ -27,42 +27,42 @@ Taper also supports backing up SCSI, ftape, zftape and removable
 drives. By default, taper is set for incremental backups and automatic
 most recent restore.
 
-%description -l de
+%description -l de.UTF-8
 Ein Band-Backup- und Wiederherstellungsprogramm mit einer freundlichen
-Bedienungsoberfläche zum Sichern/Wiederherstellen von Dateien in
-Kombination mit einem Bandlaufwerk. Alternativ können Dateien auch auf
+BedienungsoberflÃ¤che zum Sichern/Wiederherstellen von Dateien in
+Kombination mit einem Bandlaufwerk. Alternativ kÃ¶nnen Dateien auch auf
 Festplatte gespeichert werden. Die Auswahl der zu sichernden bzw.
-wiederherzustellenden Dateien ist ähnlich wie beim Midight Commander -
-mit einfachem Verzeichniswechsel. Rekursiv ausgewählte Verzeichnisse
-werden unterstützt; inkrementelle Backups und automatische
+wiederherzustellenden Dateien ist Ã¤hnlich wie beim Midight Commander -
+mit einfachem Verzeichniswechsel. Rekursiv ausgewÃ¤hlte Verzeichnisse
+werden unterstÃ¼tzt; inkrementelle Backups und automatische
 Wiederherstellung der zuletzt gespeicherten Version sind
 Standardeinstellungen. SCSI, ftape, zftape und Wechselplatten werden
-unterstützt.
+unterstÃ¼tzt.
 
-%description -l fr
+%description -l fr.UTF-8
 Programme de sauvegarde et de restauration sur bandes offrant une
-interface utilisateur agréable. Les fichiers peuvent aussi être
-sauvegardés dans des fichiers sur disque. La sélection des fichiers à
-sauvegarder er restaurer est très similaire à l'interface de Midnight
-Commander et permet un parcours facile des répertoires. La sélection
-récursive des répertoires est possible. La sauvegarde incrémentale et
-la restauration automatique de la plus récente sont les valeurs par
-défaut. Les lecteurs amovibles, SCSI, ftape, zftape sont reconnus.
+interface utilisateur agrÃ©able. Les fichiers peuvent aussi Ãªtre
+sauvegardÃ©s dans des fichiers sur disque. La sÃ©lection des fichiers Ã 
+sauvegarder er restaurer est trÃ¨s similaire Ã  l'interface de Midnight
+Commander et permet un parcours facile des rÃ©pertoires. La sÃ©lection
+rÃ©cursive des rÃ©pertoires est possible. La sauvegarde incrÃ©mentale et
+la restauration automatique de la plus rÃ©cente sont les valeurs par
+dÃ©faut. Les lecteurs amovibles, SCSI, ftape, zftape sont reconnus.
 
-%description -l pl
-Taper jest programem do obs³ugi kopii zapasowych z przyjaznym
-interfejsem u¿ytkownika. Pliki mog± byæ sk³adowane na napêdzie
-ta¶mowym lub na dysku twardym. Interfejs do wyboru plików jest bardzo
-podobny do Midnight Commandera i pozwala na ³atwe poruszanie siê po
-katalogach. Taper daje mo¿liwo¶æ rekursywnego wyboru katalogów,
-sk³adowanie na SCSI, ftape, zftape oraz dyskach przeno¶nych.
+%description -l pl.UTF-8
+Taper jest programem do obsÅ‚ugi kopii zapasowych z przyjaznym
+interfejsem uÅ¼ytkownika. Pliki mogÄ… byÄ‡ skÅ‚adowane na napÄ™dzie
+taÅ›mowym lub na dysku twardym. Interfejs do wyboru plikÃ³w jest bardzo
+podobny do Midnight Commandera i pozwala na Å‚atwe poruszanie siÄ™ po
+katalogach. Taper daje moÅ¼liwoÅ›Ä‡ rekursywnego wyboru katalogÃ³w,
+skÅ‚adowanie na SCSI, ftape, zftape oraz dyskach przenoÅ›nych.
 
-%description -l tr
-Bu yazılım, sevimli bir kullanıcı arayüzüne sahip bir manyetik bant
-yedekleme ve geri yükleme sistemidir. Midnight Commander yazılımının
-arayüzüne oldukça benzeyen arayüzü sayesinde, dizinleri gezerek
-yedeklenecek ya da geri yüklenecek dosyaları seçmek oldukça kolaydır.
-SCSI, ftape, zftape ve takılır/çıkarılır sürücüler desteklenmektedir.
+%description -l tr.UTF-8
+Bu yazÄ±lÄ±m, sevimli bir kullanÄ±cÄ± arayÃ¼zÃ¼ne sahip bir manyetik bant
+yedekleme ve geri yÃ¼kleme sistemidir. Midnight Commander yazÄ±lÄ±mÄ±nÄ±n
+arayÃ¼zÃ¼ne oldukÃ§a benzeyen arayÃ¼zÃ¼ sayesinde, dizinleri gezerek
+yedeklenecek ya da geri yÃ¼klenecek dosyalarÄ± seÃ§mek oldukÃ§a kolaydÄ±r.
+SCSI, ftape, zftape ve takÄ±lÄ±r/Ã§Ä±karÄ±lÄ±r sÃ¼rÃ¼cÃ¼ler desteklenmektedir.
 
 %prep
 %setup -q -n %{name}-%{version}pre-1
