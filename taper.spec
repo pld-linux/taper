@@ -1,8 +1,8 @@
 Summary:	A menu-driven file backup system
-Summary(de.UTF-8):   Menügesteuertes Backupsystem mit Unterstützung für Komprimierung
-Summary(fr.UTF-8):   Système de sauvegarde par menus avec gestion de la compression
-Summary(pl.UTF-8):   System do backupów obsługiwany z menu
-Summary(tr.UTF-8):   Sıkıştırma desteği sunan, menü tabanlı yedekleme sistemi
+Summary(de.UTF-8):	Menügesteuertes Backupsystem mit Unterstützung für Komprimierung
+Summary(fr.UTF-8):	Système de sauvegarde par menus avec gestion de la compression
+Summary(pl.UTF-8):	System do backupów obsługiwany z menu
+Summary(tr.UTF-8):	Sıkıştırma desteği sunan, menü tabanlı yedekleme sistemi
 Name:		taper
 Version:	7.0
 %define		_pre	pre1
