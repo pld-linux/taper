@@ -66,9 +66,9 @@ SCSI, ftape, zftape ve takılır/çıkarılır sürücüler desteklenmektedir.
 
 %prep
 %setup -q -n %{name}-%{version}pre-1
-%patch0 -p1
+%patch -P0 -p1
 %ifarch sparc
-%patch1 -p1
+%patch -P1 -p1
 %endif
 
 find . -name CVS -type d | xargs rm -rf
